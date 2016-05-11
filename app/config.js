@@ -3,8 +3,7 @@
  */
 
 //环境配置
-import { env } from '../.env';
-exports.env = env;
+exports.env = process.env.NODE_ENV == undefined ? 'debug' : process.env.NODE_ENV.trim();
 
 //api借口配置
 exports.apis = {
@@ -13,7 +12,7 @@ exports.apis = {
 
 //domain配置
 exports.domain = {
-	debug: 'http://www.dingzhanghe.com',
-	test: 'http://www.dingzhanghe.com',
-	production: 'http://www.dingzhanghe.com'
+	debug: 'http://www.localdomain.com',
+	test: 'http://www.testdomain.com',
+	production: 'http://www.productiondomain.com'
 }

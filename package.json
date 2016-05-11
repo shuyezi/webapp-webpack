@@ -2,10 +2,11 @@
   "name": "webapp-webpack",
   "version": "0.0.1",
   "description": "a frontend-frame work packaged by webpack, pure webapp",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "node dev.js",
-    "build": "webpack"
+    "dev": "set NODE_ENV=debug&&webpack&&node dev.js",
+    "test": "set NODE_ENV=test&&webpack",
+    "production": "set NODE_ENV=production&&webpack"
   },
   "keywords": [
     "webapp",

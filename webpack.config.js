@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var glob = require('glob');
 var fs = require("fs");
-var env = require('./.env').env;
+var env = process.env.NODE_ENV == undefined ? 'debug' : process.env.NODE_ENV.trim();
 
 /*
  * @name Plugins
@@ -44,6 +44,7 @@ options = {
 		filename: 'app.js'
 	}
 }
+console.log('来了...');
 switch(env){
 	case 'debug':
 		options.releaseDir = 'release_debug/';
